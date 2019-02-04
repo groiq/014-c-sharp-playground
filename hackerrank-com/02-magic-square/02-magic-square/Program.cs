@@ -38,9 +38,9 @@ namespace hackerrank_com
             int result = 0;
 
             // check input
-            foreach(int[] i in s)
+            foreach (int[] i in s)
             {
-                foreach(int j in i)
+                foreach (int j in i)
                 {
                     Console.Write(j + ",");
                 }
@@ -85,7 +85,7 @@ namespace hackerrank_com
             int[] q3c = { 6, 1, 6 };
             int[][] q3 = { q3a, q3b, q3c };
 
-            
+
             Console.WriteLine(formingMagicSquare(q1));
             Console.WriteLine(formingMagicSquare(q2));
             Console.WriteLine(formingMagicSquare(q3));
