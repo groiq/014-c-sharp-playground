@@ -78,68 +78,21 @@ namespace hackerrank_com
         {
             // https://www.hackerrank.com/challenges/magic-square-forming/problem
 
-
-
             int result = 0;
 
-            // check input
-            //foreach (int[] i in s)
-            //{
-            //    foreach (int j in i)
-            //    {
-            //        Console.Write(j + ",");
-            //    }
-            //    Console.WriteLine();
-            //}
-
-            // todo: generate some test output with the squares and the sums - 
-            // best as an extra function
-
-
+            // test output
             int[] sums = Sums(s);
             PrintSquare(s);
 
-            // some thoughts:
-            // find the single operation that brings us closest to our goal.
+            // brute force restart: hard-code all possible magic squares
 
-            // for that, find the horizontal / vertical sums that are least off.
-            // also, if two sums are the same, take those.
+            // for ease of handling, copy the input to a single-dimension array
 
-            // new approach:
-            // Each cell is off by a certain number.
-            // This can be read by the sums the cell is involved in.
+            // define all possible magic squares as single arrays
 
-            // If the sum on one side is 15, I can assume that the cell is okay.
-            // If a cell is in a row of 12 and a column of 14, I assume
-            // that the cell makes the column off by 1
-            // and that the row is off by this and another cell.
-            // So, try increasing that cell by 1 and recalculating.
+            // compare the arrays
 
 
-            // No, wait. I don't need to know everything about the cells!
-            // If a row is 13, then it is off by two - then one cell is off by 2 -
-            // or two cells are off by 1 each - 
-            // and I don't need to know which ones!
-            // All I need is to calculate all rows, check how much they are off, and add up the results!
-
-            int rowOffset = 0;
-
-            foreach (int[] row in s)
-            {
-                // data check
-                //Console.WriteLine("sums: [{0}]", string.Join(", ", result));
-                int rowSum = 0;
-                foreach (int cell in row) { rowSum += cell; }
-                int offset = Math.Abs(15 - rowSum);
-                Console.Write("row: [{0}]", string.Join(", ", row));
-                Console.WriteLine(", offset: " + offset);
-                rowOffset += offset;
-
-
-
-            }
-
-            Console.WriteLine("total row offset: " + rowOffset);
 
 
             return result;
