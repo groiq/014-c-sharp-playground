@@ -96,15 +96,27 @@ namespace hackerrank_com
             // best as an extra function
 
 
+            int[] sums = Sums(s);
+            PrintSquare(s);
+            
             // some thoughts:
             // find the single operation that brings us closest to our goal.
 
             // for that, find the horizontal / vertical sums that are least off.
             // also, if two sums are the same, take those.
 
-            int[] sums = Sums(s);
-            PrintSquare(s);
+            // new approach:
+            // Each cell is off by a certain number.
+            // This can be read by the sums the cell is involved in.
 
+            // If the sum on one side is 15, I can assume that the cell is okay.
+            // If a cell is in a row of 12 and a column of 14, I assume
+            // that the cell makes the column off by 1
+            // and that the row is off by this and another cell.
+            // So, try increasing that cell by 1 and recalculating.
+
+
+            
 
 
             return result;
