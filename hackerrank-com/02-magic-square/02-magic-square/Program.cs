@@ -98,7 +98,7 @@ namespace hackerrank_com
 
             int[] sums = Sums(s);
             PrintSquare(s);
-            
+
             // some thoughts:
             // find the single operation that brings us closest to our goal.
 
@@ -116,7 +116,24 @@ namespace hackerrank_com
             // So, try increasing that cell by 1 and recalculating.
 
 
-            
+            // No, wait. I don't need to know everything about the cells!
+            // If a row is 13, then it is off by two - then one cell is off by 2 -
+            // or two cells are off by 1 each - 
+            // and I don't need to know which ones!
+            // All I need is to calculate all rows, check how much they are off, and add up the results!
+
+            foreach (int[] row in s)
+            {
+                // data check
+                //Console.WriteLine("sums: [{0}]", string.Join(", ", result));
+                //Console.WriteLine("row: [{0}]", string.Join(", ", row));
+                int rowSum = 0;
+                foreach (int cell in row) { rowSum += cell; }
+                int offset = Math.Abs(15 - rowSum);
+                //Console.WriteLine(offset);
+                result += offset;
+
+            }
 
 
             return result;
@@ -148,9 +165,9 @@ namespace hackerrank_com
             //int[] testc = { 7, 8, 9 };
             //int[][] test = { testa, testb, testc };
 
-            Console.WriteLine(FormingMagicSquare(q1));
-            Console.WriteLine(FormingMagicSquare(q2));
-            Console.WriteLine(FormingMagicSquare(q3));
+            Console.WriteLine("7: " + FormingMagicSquare(q1));
+            Console.WriteLine("1: " + FormingMagicSquare(q2));
+            Console.WriteLine("4: " + FormingMagicSquare(q3));
             //Console.WriteLine(FormingMagicSquare(test));
 
             Console.ReadKey();
