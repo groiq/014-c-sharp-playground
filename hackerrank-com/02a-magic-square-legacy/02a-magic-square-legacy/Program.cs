@@ -1,14 +1,10 @@
 ﻿// workspace for exercises from https://www.hackerrank.com/
 
-// This is the magic squares exercise.
-
-// This is a copy of the program as I worked on it, with some helper classes I didn't need anyway.
-
 using System;
 
 namespace hackerrank_com
 {
-    class ProgramLongVersion
+    class Program
     {
         static int[] Sums(int[][] s)
         {
@@ -16,15 +12,15 @@ namespace hackerrank_com
             // line 1 - line 2 - line 3 - col 1 - col 2 - col 3 - 
             // diag 1 - diag 2
             int[] result = new int[8];
-            
+
             // row 1
-            foreach (int i in s[0]) { result[0] += i;  }
+            foreach (int i in s[0]) { result[0] += i; }
             // row 2
             foreach (int i in s[1]) { result[1] += i; }
             // row 3
             foreach (int i in s[2]) { result[2] += i; }
             // col 1
-            foreach (int[] i in s) { result[3] += i[0];  }
+            foreach (int[] i in s) { result[3] += i[0]; }
             // col 2
             foreach (int[] i in s) { result[4] += i[1]; }
 
@@ -34,7 +30,7 @@ namespace hackerrank_com
             // diag 1
             for (int i = 0; i < 3; i++) { result[6] += s[i][i]; }
             // diag 2
-            for (int i = 0; i < 3; i++) { result[7] += s[i][2-i]; }
+            for (int i = 0; i < 3; i++) { result[7] += s[i][2 - i]; }
 
             //Console.WriteLine("sums: [{0}]", string.Join(", ", result));
             return result;
@@ -145,5 +141,36 @@ namespace hackerrank_com
         }
 
 
-     }
+        static void Main(string[] args)
+        {
+
+            int[] q1a = { 5, 3, 4 };
+            int[] q1b = { 1, 5, 8 };
+            int[] q1c = { 6, 4, 2 };
+            //int[][] q1 = { { 5, 3, 4 }, { 1, 5, 8 }, { 6, 4, 2 } };
+            int[][] q1 = { q1a, q1b, q1c };
+
+            int[] q2a = { 4, 9, 2 };
+            int[] q2b = { 3, 5, 7 };
+            int[] q2c = { 8, 1, 5 };
+            int[][] q2 = { q2a, q2b, q2c };
+
+            int[] q3a = { 4, 8, 2 };
+            int[] q3b = { 4, 5, 7 };
+            int[] q3c = { 6, 1, 6 };
+            int[][] q3 = { q3a, q3b, q3c };
+
+            //int[] testa = { 1, 2, 3 };
+            //int[] testb = { 4, 5, 6 };
+            //int[] testc = { 7, 8, 9 };
+            //int[][] test = { testa, testb, testc };
+
+            Console.WriteLine("7: " + FormingMagicSquare(q1));
+            Console.WriteLine("1: " + FormingMagicSquare(q2));
+            Console.WriteLine("4: " + FormingMagicSquare(q3));
+            //Console.WriteLine(FormingMagicSquare(test));
+
+            Console.ReadKey();
+        }
+    }
 }
