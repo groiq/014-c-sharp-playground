@@ -6,16 +6,37 @@ namespace hackerrank_com
 {
     class Program
     {
-        static int[] sums(int[][] s)
+        static int[] Sums(int[][] s)
         {
             // return the sums in this order:
             // line 1 - line 2 - line 3 - col 1 - col 2 - col 3 - 
             // diag 1 - diag 2
             int[] result = new int[8];
+            
+            // row 1
+            foreach (int i in s[0]) { result[0] += i;  }
+            // row 2
+            foreach (int i in s[1]) { result[1] += i; }
+            // row 3
+            foreach (int i in s[2]) { result[2] += i; }
+            // col 1
+            foreach (int[] i in s) { result[3] += i[0];  }
+            // col 2
+            foreach (int[] i in s) { result[4] += i[1]; }
+
+            // col 3
+            foreach (int[] i in s) { result[5] += i[2]; }
+
+            // diag 1
+            for (int i = 0; i < 3; i++) { result[6] += s[i][i]; }
+            // diag 2
+            for (int i = 0; i < 3; i++) { result[7] += s[i][2-i]; }
+
+            //Console.WriteLine("sums: [{0}]", string.Join(", ", result));
             return result;
         }
 
-        static void printMagicSqare(int[][] s)
+        static void PrintMagicSqare(int[][] s)
         {
             // print the magic square like this:
 
@@ -29,7 +50,7 @@ namespace hackerrank_com
              */
         }
 
-        static int formingMagicSquare(int[][] s)
+        static int FormingMagicSquare(int[][] s)
         {
             // https://www.hackerrank.com/challenges/magic-square-forming/problem
 
@@ -57,7 +78,7 @@ namespace hackerrank_com
             // for that, find the horizontal / vertical sums that are least off.
             // also, if two sums are the same, take those.
 
-
+            int[] sums = Sums(s);
 
 
 
@@ -85,10 +106,15 @@ namespace hackerrank_com
             int[] q3c = { 6, 1, 6 };
             int[][] q3 = { q3a, q3b, q3c };
 
+            int[] testa = { 1, 2, 3 };
+            int[] testb = { 4, 5, 6 };
+            int[] testc = { 7, 8, 9 };
+            int[][] test = { testa, testb, testc };
 
-            Console.WriteLine(formingMagicSquare(q1));
-            Console.WriteLine(formingMagicSquare(q2));
-            Console.WriteLine(formingMagicSquare(q3));
+            Console.WriteLine(FormingMagicSquare(q1));
+            Console.WriteLine(FormingMagicSquare(q2));
+            Console.WriteLine(FormingMagicSquare(q3));
+            Console.WriteLine(FormingMagicSquare(test));
 
             Console.ReadKey();
         }
