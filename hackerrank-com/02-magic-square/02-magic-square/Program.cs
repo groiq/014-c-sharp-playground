@@ -6,6 +6,8 @@ namespace hackerrank_com
 {
     class Program
     {
+        
+
         static int[] Sums(int[][] s)
         {
             // return the sums in this order:
@@ -87,6 +89,16 @@ namespace hackerrank_com
             // brute force restart: hard-code all possible magic squares
 
             // for ease of handling, copy the input to a single-dimension array
+            int[] input = new int[9];
+            for (int i = 0; i < 9; i++)
+            {
+                int row = i / 3;
+                int col = i % 3;
+                //Console.WriteLine("row " + row + ", col " + col);
+                input[i] = s[row][col];
+            }
+            //Console.WriteLine("sums: [{0}]", string.Join(", ", result));
+            //Console.WriteLine("square as single array: [{0}]", string.Join(", ", input));
 
             // define all possible magic squares as single arrays
 
