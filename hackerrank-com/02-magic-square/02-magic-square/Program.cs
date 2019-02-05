@@ -32,7 +32,7 @@ namespace hackerrank_com
             // diag 2
             for (int i = 0; i < 3; i++) { result[7] += s[i][2-i]; }
 
-            Console.WriteLine("sums: [{0}]", string.Join(", ", result));
+            //Console.WriteLine("sums: [{0}]", string.Join(", ", result));
             return result;
         }
 
@@ -83,14 +83,14 @@ namespace hackerrank_com
             int result = 0;
 
             // check input
-            foreach (int[] i in s)
-            {
-                foreach (int j in i)
-                {
-                    Console.Write(j + ",");
-                }
-                Console.WriteLine();
-            }
+            //foreach (int[] i in s)
+            //{
+            //    foreach (int j in i)
+            //    {
+            //        Console.Write(j + ",");
+            //    }
+            //    Console.WriteLine();
+            //}
 
             // todo: generate some test output with the squares and the sums - 
             // best as an extra function
