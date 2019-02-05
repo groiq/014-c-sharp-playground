@@ -102,8 +102,9 @@ namespace hackerrank_com
             // for that, find the horizontal / vertical sums that are least off.
             // also, if two sums are the same, take those.
 
-            //int[] sums = Sums(s);
+            int[] sums = Sums(s);
             PrintSquare(s);
+
 
 
             return result;
@@ -130,15 +131,15 @@ namespace hackerrank_com
             int[] q3c = { 6, 1, 6 };
             int[][] q3 = { q3a, q3b, q3c };
 
-            int[] testa = { 1, 2, 3 };
-            int[] testb = { 4, 5, 6 };
-            int[] testc = { 7, 8, 9 };
-            int[][] test = { testa, testb, testc };
+            //int[] testa = { 1, 2, 3 };
+            //int[] testb = { 4, 5, 6 };
+            //int[] testc = { 7, 8, 9 };
+            //int[][] test = { testa, testb, testc };
 
             Console.WriteLine(FormingMagicSquare(q1));
             Console.WriteLine(FormingMagicSquare(q2));
             Console.WriteLine(FormingMagicSquare(q3));
-            Console.WriteLine(FormingMagicSquare(test));
+            //Console.WriteLine(FormingMagicSquare(test));
 
             Console.ReadKey();
         }
