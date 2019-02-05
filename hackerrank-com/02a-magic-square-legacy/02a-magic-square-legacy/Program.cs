@@ -122,18 +122,24 @@ namespace hackerrank_com
             // and I don't need to know which ones!
             // All I need is to calculate all rows, check how much they are off, and add up the results!
 
+            int rowOffset = 0;
+
             foreach (int[] row in s)
             {
                 // data check
                 //Console.WriteLine("sums: [{0}]", string.Join(", ", result));
-                //Console.WriteLine("row: [{0}]", string.Join(", ", row));
                 int rowSum = 0;
                 foreach (int cell in row) { rowSum += cell; }
                 int offset = Math.Abs(15 - rowSum);
-                //Console.WriteLine(offset);
-                result += offset;
+                Console.Write("row: [{0}]", string.Join(", ", row));
+                Console.WriteLine(", offset: " + offset);
+                rowOffset += offset;
+
+                
 
             }
+
+            Console.WriteLine("total row offset: " + rowOffset);
 
 
             return result;
@@ -160,14 +166,15 @@ namespace hackerrank_com
             int[] q3c = { 6, 1, 6 };
             int[][] q3 = { q3a, q3b, q3c };
 
-            //int[] testa = { 1, 2, 3 };
-            //int[] testb = { 4, 5, 6 };
-            //int[] testc = { 7, 8, 9 };
-            //int[][] test = { testa, testb, testc };
-
-            Console.WriteLine("7: " + FormingMagicSquare(q1));
-            Console.WriteLine("1: " + FormingMagicSquare(q2));
-            Console.WriteLine("4: " + FormingMagicSquare(q3));
+            int[] q4a = { 4, 5, 8 };
+            int[] q4b = { 2, 4, 1 };
+            int[] q4c = { 1, 9, 7 };
+            int[][] q4 = { q4a, q4b, q4c, };
+            
+            //Console.WriteLine("7: " + FormingMagicSquare(q1));
+            //Console.WriteLine("1: " + FormingMagicSquare(q2));
+            //Console.WriteLine("4: " + FormingMagicSquare(q3));
+            Console.WriteLine("14: " + FormingMagicSquare(q4));
             //Console.WriteLine(FormingMagicSquare(test));
 
             Console.ReadKey();
