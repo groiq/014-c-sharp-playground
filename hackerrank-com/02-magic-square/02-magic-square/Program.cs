@@ -32,11 +32,11 @@ namespace hackerrank_com
             // diag 2
             for (int i = 0; i < 3; i++) { result[7] += s[i][2-i]; }
 
-            //Console.WriteLine("sums: [{0}]", string.Join(", ", result));
+            Console.WriteLine("sums: [{0}]", string.Join(", ", result));
             return result;
         }
 
-        static void PrintMagicSqare(int[][] s)
+        static void PrintSquare(int[][] s)
         {
             // print the magic square like this:
 
@@ -48,6 +48,30 @@ namespace hackerrank_com
              *    --------|---
              *    15 15 15| 15
              */
+            int[] sums = Sums(s);
+
+            Console.WriteLine("         | " + sums[7]);
+
+            Console.WriteLine("---------|---");
+
+            foreach (int item in s[0]) { Console.Write(" " + item + " "); }
+            Console.Write("| " + sums[0]);
+            Console.WriteLine();
+
+            foreach (int item in s[1]) { Console.Write(" " + item + " "); }
+            Console.Write("| " + sums[1]);
+            Console.WriteLine();
+
+            foreach (int item in s[2]) { Console.Write(" " + item + " "); }
+            Console.Write("| " + sums[2]);
+            Console.WriteLine();
+
+            Console.WriteLine("---------|---");
+
+            for (int i = 3; i < 6; i++) { Console.Write(sums[i] + " "); }
+            Console.Write("| " + sums[6]);
+            Console.WriteLine();
+
         }
 
         static int FormingMagicSquare(int[][] s)
@@ -78,8 +102,8 @@ namespace hackerrank_com
             // for that, find the horizontal / vertical sums that are least off.
             // also, if two sums are the same, take those.
 
-            int[] sums = Sums(s);
-
+            //int[] sums = Sums(s);
+            PrintSquare(s);
 
 
             return result;
