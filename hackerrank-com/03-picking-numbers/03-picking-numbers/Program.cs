@@ -31,18 +31,12 @@ namespace hackerrank_com
             
             foreach (var curKey in counter.Keys)
             {
+                int curPicking = counter[curKey];
                 int nextKey = curKey + 1;
-                Console.WriteLine(curKey + " -> " + nextKey);
-                if (counter.ContainsKey(nextKey))
-                {
-                    int curPicking = counter[curKey] + counter[nextKey];
-                    Console.WriteLine(curKey + " -> " + counter[curKey] + ", " 
-                        + nextKey + " -> " + counter[nextKey] + " => " + curPicking);
-                    if (curPicking > result)
-                    {
-                        result = curPicking;
-                    }
-                }
+                if (counter.ContainsKey(nextKey)) { curPicking += counter[nextKey]; }
+                if (curPicking > result) { result = curPicking; }
+                
+                
             }
 
             return result;
