@@ -124,7 +124,7 @@ namespace hackerrank_com
             {
                 Console.WriteLine("[{0}]", string.Join(", ", item));
             }
-            // TODO Verify that!
+            
 
 
             // compare the arrays
