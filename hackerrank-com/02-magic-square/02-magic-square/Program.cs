@@ -102,6 +102,31 @@ namespace hackerrank_com
 
             // define all possible magic squares as single arrays
 
+            // the raw data is copy-pasted from the output of the included python script.
+            // original data from wikipedia.
+            int[] magSquaresRawData = { 8, 1, 6, 3, 5, 7, 4, 9, 2, 6, 1, 8, 7, 5, 3, 2, 9, 4, 2, 7, 6, 9, 5, 1, 4, 3, 8, 4, 3, 8, 9, 5, 1, 2, 7, 6, 2, 9, 4, 7, 5, 3, 6, 1, 8, 4, 9, 2, 3, 5, 7, 8, 1, 6, 6, 7, 2, 1, 5, 9, 8, 3, 4, 8, 3, 4, 1, 5, 9, 6, 7, 2};
+            //Console.WriteLine("[{0}]", string.Join(", ", magSquaresRawData));
+            int[][] magSquares = new int[8][];
+            for (int i = 0; i < 8; i++)
+            {
+                magSquares[i] = new int[9];
+            }
+
+            for (int i = 0; i < magSquaresRawData.Length; i++)
+            {
+                //Console.WriteLine(i);
+                int square = i / 9;
+                int field = i % 9;
+                magSquares[square][field] = magSquaresRawData[i];
+            }
+
+            foreach (int[] item in magSquares)
+            {
+                Console.WriteLine("[{0}]", string.Join(", ", item));
+            }
+            // TODO Verify that!
+
+
             // compare the arrays
 
 
