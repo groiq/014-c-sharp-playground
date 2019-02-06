@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.329
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03-picking-numbers", "03-picking-numbers\03-picking-numbers.csproj", "{56F4C668-BD0E-4011-9B55-EB7FCF1DF4AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{56F4C668-BD0E-4011-9B55-EB7FCF1DF4AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56F4C668-BD0E-4011-9B55-EB7FCF1DF4AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56F4C668-BD0E-4011-9B55-EB7FCF1DF4AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56F4C668-BD0E-4011-9B55-EB7FCF1DF4AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BFE5A2D6-58D3-47BB-8221-B3003CEBF399}
+	EndGlobalSection
+EndGlobal
