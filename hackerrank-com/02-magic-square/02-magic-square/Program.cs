@@ -80,7 +80,7 @@ namespace hackerrank_com
         {
             // https://www.hackerrank.com/challenges/magic-square-forming/problem
 
-            int result = 0;
+            int result = 128;    // max possible cost should be 45, let's leave a generous error of margin
 
             // test output
             int[] sums = Sums(s);
@@ -120,14 +120,23 @@ namespace hackerrank_com
                 magSquares[square][field] = magSquaresRawData[i];
             }
 
+            
+
+            // compare the arrays
             foreach (int[] item in magSquares)
             {
                 Console.WriteLine("[{0}]", string.Join(", ", item));
+                Console.WriteLine("[{0}]", string.Join(", ", input));
+                int currCost = 0;
+                Console.Write(">");
+                for (int i = 0; i < item.Length; i++)
+                {
+                    Console.Write(Math.Abs(item[i] - input[i]) + ", ");
+                    currCost += Math.Abs(item[i] - input[i]);
+                }
+                Console.WriteLine(">" + currCost);
+                if (currCost < result) { result = currCost; }
             }
-            
-
-
-            // compare the arrays
 
 
 
