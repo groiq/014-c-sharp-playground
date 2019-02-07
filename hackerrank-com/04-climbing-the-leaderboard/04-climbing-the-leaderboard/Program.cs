@@ -10,44 +10,46 @@ namespace hackerrank_com
         static int[] climbingLeaderboard(int[] scores, int[] alice)
         {
             //Console.WriteLine("---------------");
-            pprint(scores);
-            pprint(alice);
+            //pprint(scores);
+            //pprint(alice);
             int[] result = new int[alice.Length];
             int alicePos = alice.Length - 1;
             int scoresPos = 0;
+            int curScore = scores[scoresPos];
             int rank = 1;
 
             while (alicePos >= 0)
             {
-                //if (scoresPos >= scores.Length) { break; }
-                Console.WriteLine($"alicePos: {alicePos}, alice: {alice[alicePos]}, scoresPos: " +
-                    $"{scoresPos}, scores: {scores[scoresPos]}, rank: {rank}");
-                if (alice[alicePos] >= scores[scoresPos])
+                //Console.WriteLine($"alicePos: {alicePos}, alice: {alice[alicePos]}, scoresPos: {scoresPos},"  +
+                //   $"score: {scores[scoresPos]}, rank: {rank}" );
+
+                if (alice[alicePos] >= curScore)
                 {
+                    //Console.WriteLine("score is greater or equal, so enter rank and go to prev score");
                     result[alicePos] = rank;
                     alicePos -= 1;
-                    //scoresPos += 1;
                 }
                 else
                 {
-
-                    int prevScore = scores[scoresPos];
-                    //alicePos -= 1;
-                    scoresPos += 1;
-                    if (scoresPos >= scores.Length)
+                    //Console.WriteLine("score is less, so we search for the next entry");
+                    int prevScore = curScore;
+                    //int curScore;
+                    if (scoresPos < scores.Length - 1)
                     {
-                        result[alicePos] = rank+1;
-                        break;
+                        scoresPos += 1;
+                        curScore = scores[scoresPos];
                     }
-                    int curScore = scores[scoresPos];
-                    rank = curScore == prevScore ? rank : rank + 1;
-
-
+                    else
+                    {
+                        curScore = 0;
+                    }
+                    if (curScore < prevScore) { rank += 1; }
                 }
 
                 //alicePos -= 1;
             }
 
+ 
             //pprint(result);
             return result;
         }
@@ -61,7 +63,7 @@ namespace hackerrank_com
 
         static void Main(string[] args)
         {
-            /*
+            
             int[] s1 = { 100, 100, 50, 40, 40, 20, 10 };
             int[] a1 = { 5, 25, 50, 120 };
             int[] r1 = climbingLeaderboard(s1, a1);
@@ -78,7 +80,7 @@ namespace hackerrank_com
             int[] r3 = climbingLeaderboard(s3, a1);
             Console.WriteLine("[5, 4, 3, 1] ->");
             pprint(r3);
-            */
+            
 
             int[] s4 = { 10, 9, 8 };
             int[] a4 = { 1, 2, 3 };

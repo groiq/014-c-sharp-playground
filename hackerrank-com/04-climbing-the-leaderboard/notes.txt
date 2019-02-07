@@ -1,15 +1,53 @@
-[5, 4, 3, 1] ->
+---------------
+[100, 100, 50, 40, 40, 20, 10]
+[5, 25, 50, 120]
+alicePos: 3, alice: 120, scoresPos: 0, scores: 100, rank: 1
+alicePos: 2, alice: 50, scoresPos: 0, scores: 100, rank: 1
+alicePos: 2, alice: 50, scoresPos: 1, scores: 100, rank: 2
+alicePos: 2, alice: 50, scoresPos: 2, scores: 50, rank: 3
+alicePos: 1, alice: 25, scoresPos: 2, scores: 50, rank: 3
+alicePos: 1, alice: 25, scoresPos: 3, scores: 40, rank: 4
+alicePos: 1, alice: 25, scoresPos: 4, scores: 40, rank: 5
+alicePos: 1, alice: 25, scoresPos: 5, scores: 20, rank: 6
+alicePos: 0, alice: 5, scoresPos: 5, scores: 20, rank: 6
+alicePos: 0, alice: 5, scoresPos: 6, scores: 10, rank: 7
+[6, 4, 2, 1] ->
+[8, 6, 3, 1]
+---------------
+[100, 90, 90, 80, 75, 60]
+[50, 65, 77, 90, 102]
+alicePos: 4, alice: 102, scoresPos: 0, scores: 100, rank: 1
+alicePos: 3, alice: 90, scoresPos: 0, scores: 100, rank: 1
+alicePos: 3, alice: 90, scoresPos: 1, scores: 90, rank: 2
+alicePos: 2, alice: 77, scoresPos: 1, scores: 90, rank: 2
+alicePos: 2, alice: 77, scoresPos: 2, scores: 90, rank: 3
+alicePos: 2, alice: 77, scoresPos: 3, scores: 80, rank: 4
+alicePos: 2, alice: 77, scoresPos: 4, scores: 75, rank: 5
+alicePos: 1, alice: 65, scoresPos: 4, scores: 75, rank: 5
+alicePos: 1, alice: 65, scoresPos: 5, scores: 60, rank: 6
+alicePos: 0, alice: 50, scoresPos: 5, scores: 60, rank: 6
+[6, 5, 4, 2, 1] ->
+[7, 6, 5, 2, 1]
+---------------
 [100, 75, 50, 25]
 [5, 25, 50, 120]
-i: 0, scores[i]: 100, pos: 3, alice[pos]: 120
-i: 1, scores[i]: 75, pos: 2, alice[pos]: 50
-i: 2, scores[i]: 50, pos: 2, alice[pos]: 50
-i: 3, scores[i]: 25, pos: 1, alice[pos]: 25
-[0, 4, 3, 1]
+alicePos: 3, alice: 120, scoresPos: 0, scores: 100, rank: 1
+alicePos: 2, alice: 50, scoresPos: 0, scores: 100, rank: 1
+alicePos: 2, alice: 50, scoresPos: 1, scores: 75, rank: 2
+alicePos: 2, alice: 50, scoresPos: 2, scores: 50, rank: 3
+alicePos: 1, alice: 25, scoresPos: 2, scores: 50, rank: 3
+alicePos: 1, alice: 25, scoresPos: 3, scores: 25, rank: 4
+alicePos: 0, alice: 5, scoresPos: 3, scores: 25, rank: 4
+[5, 4, 3, 1] ->
+[5, 4, 3, 1]
 
 
-
-
-
+[10, 9, 8]
+[1, 2, 3]
+alicePos: 2, alice: 3, scoresPos: 0, scores: 10, rank: 1
+alicePos: 2, alice: 3, scoresPos: 1, scores: 9, rank: 2
+alicePos: 2, alice: 3, scoresPos: 2, scores: 8, rank: 3
+[4, 4, 4] >
+[0, 0, 4]
 
 
