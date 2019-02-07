@@ -3,6 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.1</TargetFramework>
+    <RootNamespace>_04_climbing_the_leaderboard</RootNamespace>
   </PropertyGroup>
 
 </Project>
