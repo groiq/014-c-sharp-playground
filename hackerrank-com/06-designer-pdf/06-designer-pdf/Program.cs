@@ -9,8 +9,16 @@ namespace hackerrank_com
 
         static int designerPdfViewer(int[] h, string word)
         {
-            int result = 0;
-
+            int width = word.Length;
+            int height = 0;
+            //pprint(h);
+            foreach (char item in word)
+            {
+                int pos = (int)item - (int)'a';
+                //Console.WriteLine(item + ": " + pos + ": " + h[pos]);
+                if (h[pos] > height) { height = h[pos]; }
+            }
+            int result = width * height;
             return result;
         }
 
@@ -35,7 +43,6 @@ namespace hackerrank_com
             string w1 = "zaba";
             string o1 = "28";
             Console.WriteLine(o1 + ": " + designerPdfViewer(i1, w1));
-
 
             Console.ReadKey();
         }
