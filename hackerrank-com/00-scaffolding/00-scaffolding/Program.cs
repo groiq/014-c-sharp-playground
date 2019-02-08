@@ -12,6 +12,11 @@ namespace hackerrank_com
         {
             Console.WriteLine("[{0}]", string.Join(", ", input));
         }
+        // array toString function
+        static string arStr(int[] input)
+        {
+            return $"[{string.Join(", ", input)}]";
+        }
 
         static void Main(string[] args)
         {
