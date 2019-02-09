@@ -41,24 +41,27 @@ namespace hackerrank_com
 
             if (y1 > y0)
             {
-                result += dateDiff(m0, d0, y0, 31, 12, d0);
+                result += dateDiff(d0, m0, y0, 31, 12, y0);
                 for (int betwYear = y0 + 1; betwYear < y1; betwYear++)
                 {
-                    result += dateDiff(1, 1, betwYear, 31, 12, betwYear);
+                    result += dateDiff(0, 1, betwYear, 31, 12, betwYear);
                 }
-                result += dateDiff(1, 1, y1, d1, m1, y1);
+                result += dateDiff(0, 1, y1, d1, m1, y1);
             }
             else
             {
-                if (m0 == m1) { result = d1 - d0; }
+                //Console.WriteLine("d0:" + d0 +",m0:" + m0 + ",y0:" + y0 + ",d1:" + d1 + ",m1:" + m1 + ",y1:" + y1);
+                if (m0 == m1) { result += (d1 - d0); }
                 else
                 {
                     int[] monthDays = daysOfMonth(y0);
-                    result += (monthDays[m0] - d0);
-                    for(int fullMonth = m0+1;fullMonth < m1; fullMonth++) { result += monthDays[fullMonth]; }
+                    result += (monthDays[m0-1] - d0);
+                    for(int fullMonth = m0+1;fullMonth < m1; fullMonth++) { result += monthDays[fullMonth-1]; }
                     result += d1;
                 }
             }
+            //Console.WriteLine("calculating: " + d0 + "-" + m0 + "-" + y0 + " - " + d1 + "-" + m1 + "-" + y1 +
+            //    " -> " + result + " d");
 
             return result;
         }
