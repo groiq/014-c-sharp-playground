@@ -21,33 +21,17 @@ namespace hackerrank_com
 
         static int reverseNum(int input)
         {
+            Console.Write(input);
             int result = 0;
-            var split = new List<int>();
-            int rest = input;
-            int digit;
-            int pos = 1;
-            while (rest > 0)
+            int rest;
+            while(input > 0)
             {
-                digit = rest % 10;
-                rest = rest / 10;
-                split.Add(digit);
-                pos *= 10;
-                
+                rest = input % 10;
+                result = result * 10 + rest;
+                input /= 10;
             }
-            pos /= 10;
-            foreach (var item in split)
-            {
-                result += (item * pos);
-                pos /= 10;
-            }
-
-
-            int[] splitAr = new int[split.Count];
-            for (int i = 0; i < splitAr.Length; i++)
-            {
-                splitAr[i] = split[i];
-            }
-            //Console.WriteLine(input + " - " + arStr(splitAr) +   " - " + result);
+            
+            Console.WriteLine(" - " + result);
             return result;
         }
 
