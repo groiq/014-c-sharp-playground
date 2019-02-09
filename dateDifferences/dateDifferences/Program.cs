@@ -28,16 +28,37 @@ namespace hackerrank_com
             return result;
         }
 
-        int[] daysOfMonth(int year)
+        static int[] daysOfMonth(int year)
         {
             int[] result = { 31, febDays(year), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
             return result;
         }
 
-        static int dateDiff(int m0, int d0, int y0, int m1, int d1, int y1)
+        static int dateDiff(int d0, int m0, int y0, int d1, int m1, int y1)
         {
 
             int result = 0;
+
+            if (y1 > y0)
+            {
+                result += dateDiff(m0, d0, y0, 31, 12, d0);
+                for (int betwYear = y0 + 1; betwYear < y1; betwYear++)
+                {
+                    result += dateDiff(1, 1, betwYear, 31, 12, betwYear);
+                }
+                result += dateDiff(1, 1, y1, d1, m1, y1);
+            }
+            else
+            {
+                if (m0 == m1) { result = d1 - d0; }
+                else
+                {
+                    int[] monthDays = daysOfMonth(y0);
+                    result += (monthDays[m0] - d0);
+                    for(int fullMonth = m0+1;fullMonth < m1; fullMonth++) { result += monthDays[fullMonth]; }
+                    result += d1;
+                }
+            }
 
             return result;
         }
