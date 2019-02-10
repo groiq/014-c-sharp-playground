@@ -30,7 +30,10 @@ namespace hackerrank_com
         static void Main(string[] args)
         {
 
-            Console.WriteLine("Output goes here...");
+            for (int i = 0; i < 12; i++)
+            {
+                Console.WriteLine(i + " -> " + viralAdvertising(i));
+            }
 
             Console.ReadKey();
         }
