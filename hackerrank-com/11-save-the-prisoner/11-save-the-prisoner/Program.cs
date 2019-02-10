@@ -22,8 +22,11 @@ namespace hackerrank_com
         // design function here
         static int saveThePrisoner(int n, int m, int s)
         {
-
-            return s;
+            int result = 0;
+            result = (m + s - 1) % n;
+            if (result == 0) { result = n; }
+            if (s > n) { result = 0; }
+            return result;
         }
 
         static void Main(string[] args)
