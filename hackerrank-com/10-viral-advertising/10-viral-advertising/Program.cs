@@ -21,14 +21,13 @@ namespace hackerrank_com
 
         static int viralAdvertising(int n)
         {
-            int shared = 5;
-            int liked = shared / 2;
-            int cumulative = liked;
-            for (int i = 1; i < n; i++)
+            int curShared = 5;
+            int cumulative = 0;
+            for (int i = 0; i < n; i++)
             {
-                shared = liked * 3;
-                liked = shared / 2;
-                cumulative += liked;
+                curShared /= 2;
+                cumulative += curShared;
+                curShared *= 3;
             }
 
             return cumulative;
