@@ -26,13 +26,14 @@ namespace hackerrank_com
             int x = 0;
             for (int i = 0; i < p.Length; i++)
             {
-                Console.WriteLine("i: " + i);
+                //Console.WriteLine("i: " + i);
                 x = p[i];
-                Console.WriteLine("x: " + x);
+                //Console.WriteLine("x: " + x);
                 x = p[x-1];
-                Console.WriteLine("x: " + x);
-                result[i] = x;
-                Console.WriteLine("result[" + i + "] = " + x);
+                //Console.WriteLine("x: " + x);
+                //result[i] = x;
+                result[x - 1] = i+1;
+                //Console.WriteLine("result[" + i + "] = " + x);
             }
 
             return result;
