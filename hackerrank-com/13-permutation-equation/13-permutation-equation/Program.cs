@@ -23,6 +23,17 @@ namespace hackerrank_com
         static int[] permutationEquation(int[] p)
         {
             int[] result = new int[p.Length];
+            int x = 0;
+            for (int i = 0; i < p.Length; i++)
+            {
+                Console.WriteLine("i: " + i);
+                x = p[i];
+                Console.WriteLine("x: " + x);
+                x = p[x-1];
+                Console.WriteLine("x: " + x);
+                result[i] = x;
+                Console.WriteLine("result[" + i + "] = " + x);
+            }
 
             return result;
         }
@@ -30,7 +41,8 @@ namespace hackerrank_com
 
         static void Main(string[] args)
         {
-
+            int[] i = { 5, 2, 1, 3, 4 };
+            Console.WriteLine(arStr(i) + " -> {4,2,5,1,3} -> " + arStr(permutationEquation(i)));
             int[] i0 = { 2, 3, 1 };
             Console.WriteLine(arStr(i0) + " -> {2,3,1} -> " + arStr(permutationEquation(i0)));
             int[] i1 = { 4, 3, 5, 1, 2 };
